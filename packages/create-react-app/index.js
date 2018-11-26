@@ -36,12 +36,16 @@
 
 'use strict';
 
+// 在命令行中将输出的信息变色，改变输出信息的样式
 var chalk = require('chalk');
 
+// 获取当前node版本
 var currentNodeVersion = process.versions.node;
 var semver = currentNodeVersion.split('.');
+// major 版本号
 var major = semver[0];
 
+// 当版本号小于8时，打印信息并终止进程
 if (major < 8) {
   console.error(
     chalk.red(
@@ -52,6 +56,7 @@ if (major < 8) {
         'Please update your version of Node.'
     )
   );
+  // 结束node进程， 1是状态码，表示有异常没有处理
   process.exit(1);
 }
 
