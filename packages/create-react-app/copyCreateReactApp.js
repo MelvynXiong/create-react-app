@@ -28,7 +28,7 @@ let projectName; // 定义一个用来存储项目名称的变量
 
 // option() 增加命令参数和命令描述
 const program = new commander
-	.Command(packageJson.name) // Command() 加入了确定的前置command
+	.Command(packageJson.name) // 新建一个command
 	.version(packageJson.version) // version() 可以通过-V 或 --version查看
 	.arguments('<project-directory>') // 为顶层command定义参数 这里指 create-react-app 后面跟的文件夹名字
 	.usage(`${chalk.green('<project-directory>')} [options]`) // 当查看help的时候能看见usage的提示信息
